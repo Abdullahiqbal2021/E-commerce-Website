@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Offline bootstrap link -->
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../Font Awesomne/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+  <title>admin</title>
+</head>
+
+<body>
+  <div class="container-fluid p-0">
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap  shadow py-2 px-1 pe-5">
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Company name</a>
+      <div>
+        <li class="nav-item dropdown d-flex pe-3 ">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="dropdown04" data-bs-toggle="dropdown"
+            aria-expanded="false">Settings</a>
+          <ul class="dropdown-menu " aria-labelledby="dropdown04">
+            <li><a class="dropdown-item" href="#">Change Password</a></li>
+            <li><a class="dropdown-item" href="#">Edit Admins</a></li>
+            <hr>
+            <li><a class="dropdown-item" href="#">Log out</a></li>
+          </ul>
+        </li>
+      </div>
+    </header>
+
+
+    <div class="container-fluid ">
+      <div class="row">
+        <div class="col-md-2 col-3">
+          <ul class="nav nav-pills flex-column my-2 " id="myTab" role="tablist">
+            <li><b class="text-info">Dashboard</b></li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link " id="home-tab" data-bs-toggle="pill" data-bs-target="#users" type="button"
+                role="tab" aria-controls="home" aria-selected="true">All Users</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="profile-tab" data-bs-toggle="pill" data-bs-target="#products"
+                type="button" role="tab" aria-controls="profile" aria-selected="false">Products</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="contact-tab" data-bs-toggle="pill" data-bs-target="#categories" type="button"
+                role="tab" aria-controls="contact" aria-selected="false">Categories</button>
+            </li>
+          </ul>
+        </div>
+
+
+        <div class="col-md-10 col-9">
+          <div class="row pt-1">
+            <div class="col-3">
+              <h3>Dashbord</h3>
+            </div>
+            <div class="col-9 d-flex justify-content-end">
+              <input class="w-75" type="text" placeholder="search">
+            </div>
+          </div>
+          <hr>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade  " id="users" role="tabpanel" aria-labelledby="home-tab">
+              <h2>Registered Users</h2>
+              <table class="table table-responsive table-hover table-striped table-bordered">
+                <thead class="table-dark">
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Abdullah</td>
+                    <td>muhammadabdullahiqbal2021@gmail.com</td>
+                    <td>03204470756</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="tab-pane fade show active" id="products" role="tabpanel" aria-labelledby="profile-tab">
+
+              <h2> Products</h2>
+              <div class="row">
+
+                <div class="col-sm-3 col-md-2  col-12">
+                  <img src="images/download.png" class="w-100" alt="">
+                  <hr>
+                  <p class="my-1"><b>Product id: </b> #1234</p>
+
+                </div>
+                <div class=" col-sm-9 col-md-10 col-12">
+                  <p class="my-1"><b>Product Name: </b> Iphone 12 PRO MAX</p>
+                  <p class="my-1"><b>Product Price: </b> 40,000 rs</p>
+                  <p class="my-1"><b>Remaining qty: </b> 40 pcs</p>
+                  <p class="my-1"><b>Short Description: </b> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Laborum,
+                    praesentium. </p>
+                  <p class="my-1"><b> Description: </b> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Laborum,
+                    praesentium. </p>
+                  <a href="#">
+                    <button class="btn btn-primary">Edit</button>
+                  </a>
+                  <a href="#">
+                    <button class="btn btn-danger">Delete</button>
+                  </a>
+                </div>
+                <hr class="my-3">
+              </div>
+              <div class="row">
+
+                <div class="col-sm-3 col-12">
+                  <img src="images/download (1).png" class="w-100" alt="">
+                  <hr>
+                  <p class="my-1"><b>Product id: </b> #1234</p>
+
+                </div>
+                <div class="col-sm-9 col-12">
+                  <p class="my-1"><b>Product Name: </b> Iphone 12 PRO MAX</p>
+                  <p class="my-1"><b>Product Price: </b> 40,000 rs</p>
+                  <p class="my-1"><b>Remaining qty: </b> 40 pcs</p>
+                  <p class="my-1"><b>Short Description: </b> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Laborum,
+                    praesentium. </p>
+                  <p class="my-1"><b> Description: </b> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Laborum,
+                    praesentium. </p>
+                  <a href="#">
+                    <button class="btn btn-primary">Edit</button>
+                  </a>
+                  <a href="#">
+                    <button class="btn btn-danger">Delete</button>
+                  </a>
+                </div>
+                <hr class="my-3">
+              </div>
+              <div class="row">
+
+                <div class="col-sm-3 col-12">
+                  <img src="images/bg.jpg" class="w-100" alt="">
+                  <hr>
+                  <p class="my-1"><b>Product id: </b> #1234</p>
+
+                </div>
+                <div class="col-sm-9 col-12">
+                  <p class="my-1"><b>Product Name: </b> Iphone 12 PRO MAX</p>
+                  <p class="my-1"><b>Product Price: </b> 40,000 rs</p>
+                  <p class="my-1"><b>Remaining qty: </b> 40 pcs</p>
+                  <p class="my-1"><b>Short Description: </b> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Laborum,
+                    praesentium. </p>
+                  <p class="my-1"><b> Description: </b> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Laborum,
+                    praesentium. </p>
+                  <a href="#">
+                    <button class="btn btn-primary">Edit</button>
+                  </a>
+                  <a href="#">
+                    <button class="btn btn-danger">Delete</button>
+                  </a>
+                </div>
+                <hr class="my-3">
+              </div>
+            </div>
+
+
+            <div class="tab-pane fade" id="categories" role="tabpanel" aria-labelledby="contact-tab">.hj..</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+<script src="../javascript/bootstrap.bundle.min.js"></script>
+
+</html>

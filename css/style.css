@@ -1,0 +1,156 @@
+*{
+  box-sizing: border-box !important;
+}
+nav{
+  z-index: 10 !important;
+}
+.carousel-item{
+  width: 100vw;
+}
+.form:hover .log-in{
+  background-color: white;
+  color: blue;
+  border: 1px solid blue;
+}
+.carousel-item img{
+  width: 100%;
+
+  object-fit: cover;
+}
+
+.product-inner{
+  box-shadow: 0 0px 3px 1px rgba(0, 0, 0, 0.789);
+  margin: 9px;
+  padding: 9px 6px;
+  width: 217px;
+}
+.product-inner:hover{
+  box-shadow: 0 0px 5px 1px black;
+}
+
+
+.product-item{
+  width: 200px;
+  position: relative;
+}
+.overlay{
+  background-color: rgba(205, 144, 255, 0.568);
+  position: absolute;
+  bottom: 0%;
+  height: 50px;
+  width: 100%;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.2s ease-in;
+}
+.product-inner:hover .overlay{
+  opacity: 1;
+  visibility: visible;
+}
+
+.fa{
+  padding: 7px;
+  background-color: white;
+  margin: 0 5px ;
+  border-radius: 50%;
+  font-size: 20px;
+}
+.fa-heart{
+  color: red;
+  transition: 0.3s;
+}
+.fa-heart:hover{
+  background-color: red;
+  color: white;
+}
+.fa-shop{
+  transition: 0.3s;
+  color: blue;
+}
+.fa-shop:hover{
+  background-color: blue;
+  color: white;
+}
+.fa-eye{
+  transition: 0.3s;
+  color: rgb(51, 196, 253);
+}
+.fa-eye:hover{
+  background-color: rgb(51, 196, 253);
+  color: white;
+}
+.product-item img{
+  height: 100%;
+  width: 100%;
+  /* max-height: 308px; */
+  object-fit: cover;
+}
+.short-desc{
+  color: gray;
+  font-size: 11px;
+}
+input,textarea{
+  padding: 4px 6px ;
+  margin: 4px 0;
+}
+
+/* Detail Section */
+
+.detail-img-sec img{
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+.fa-star{
+  color: yellow;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+}
+.colors{
+  padding: 4px 14px;
+  border-radius: 50%;
+  margin: 0 4px;
+}
+.container-1{
+  height: 100vh;
+}
+.bg-gray{
+  background-color: lightgray;
+}
+.sign-in,.sign-up{
+  width: 50%;
+  position: relative;
+  border: 1px solid blue;
+}
+.log-in{
+  position: absolute;
+  top: -14px;
+  background-color: rgb(0, 140, 255);
+  color: white;
+  padding: 3px 6px;
+}
+.desc-drop{
+  display: none;
+}
+.order_photo{
+  width: 15rem;
+}
+.alert{
+  z-index: 10000 !important;
+}
+footer{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+
+@media (max-width:700px) {
+  .sign-in,.sign-up{
+    width: 80%;
+  }
+}
