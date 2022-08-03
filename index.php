@@ -44,6 +44,18 @@ if (isset($_SESSION['USER_LOGIN'])) {
     <?php
       unset($_SESSION['order_msg']);
     }
+
+    if (isset($_SESSION['CART-MSG'])) {
+    ?>
+      <div class="alert alert-info alert-dismissible fade show position-absolute w-100 top-0 text-center" style="z-index: 1000;" role="alert">
+        <?php
+        echo $_SESSION['CART-MSG'];
+        ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <?php
+      unset($_SESSION['CART-MSG']);
+    }
     ?>
     <div class="container-fluid p-0 position-relative">
 

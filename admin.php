@@ -111,15 +111,15 @@ if (isset($_SESSION['ADMIN_LOGON'])) {
 
 
           <div class="col-md-10 col-9">
-            <div class="row pt-1">
-              <div class=" col-md-1 col-2">
-                <h3>Dashbord</h3>
+            <div class="row pt-1 d-flex justify-content-between" >
+              <div class=" col-md-2 col-12">
+                <h3 class="text-center">Dashbord</h3>
               </div>
-              <div class="col-md-7 col-5 d-flex justify-content-end">
-                <input class="w-75" type="text" placeholder="search">
+              <div class="col-md-6 col-12 d-flex justify-content-end">
+                <input class="w-100" type="text" placeholder="Search by Name" id="search-input" onkeydown="search()" onkeyup="tableSearch()">
               </div>
-              <div class="col-md-3 col-5 d-flex justify-content-end ">
-                <a href="product.php"><button class="btn btn-outline-primary">Add new products</button></a>
+              <div class="col-md-3 col-12 d-flex justify-content-end ">
+                <a href="product.php" class="w-100"><button class="btn btn-outline-primary w-100">Add new products</button></a>
               </div>
             </div>
             <hr>
@@ -139,7 +139,7 @@ if (isset($_SESSION['ADMIN_LOGON'])) {
                   <tbody>
                     <?php
                     while ($result2 = mysqli_fetch_assoc($query2)) {
-                    ?>
+                      ?>
                       <tr>
                         <td>
                           <?php echo $result2['id'] ?>
@@ -165,10 +165,11 @@ if (isset($_SESSION['ADMIN_LOGON'])) {
               <div class="tab-pane fade active show " id="products" role="tabpanel" aria-labelledby="profile-tab">
 
                 <h2> Products</h2>
+                <!-- <input class="w-100" type="text" placeholder="Search by Name" id="search-input-product" onkeydown="search()"> -->
                 <?php
                 while ($result = mysqli_fetch_assoc($query)) {
                 ?>
-                  <div class="row">
+                  <div class="row product-items">
                     <div class="col-sm-3 col-md-2  col-12">
                       <img src="<?php echo $result['product_photo'] ?>" class="w-100" alt="">
                       <hr>
@@ -178,7 +179,7 @@ if (isset($_SESSION['ADMIN_LOGON'])) {
 
                     </div>
                     <div class=" col-sm-9 col-md-10 col-12">
-                      <p class="my-1"><b>Product Name: </b>
+                      <p class="my-1 prod-name"><b>Product Name: </b>
                         <?php echo $result['product_name'] ?>
                       </p>
                       <p class="my-1"><b>Product Price: </b>
@@ -213,51 +214,36 @@ if (isset($_SESSION['ADMIN_LOGON'])) {
               <!-- order -->
 
               <div class="tab-pane fade   " id="order" role="tabpanel" aria-labelledby="order-tab">
-                <?php
-                if (isset($_SESSION['Display_order'])) {
-                ?>
-                  <div class="container-fluid">
-                    <div class="ordered-items d-flex flex-wrap">
+
+                <div class="container-fluid p-0">
+                  <h2>order </h2>
+                  <table class="table table-responsive table-hover table-striped table-bordered">
+                    <thead class="table-dark">
+                      <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Mobile</th>
+                        <th>Order</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
                       <?php
-                      while ($result3 = mysqli_fetch_array($query3)) {
+                      while ($result5 = mysqli_fetch_array($query5)) {
                       ?>
-                        <div class="order-item mx-2 my-1 ">
-                          <img style="width: 100px;" src="<?php echo $result3['cart_photo'] ?>" alt="">
-                          <h6 class="text-center"><?php echo $result3['cart_name'] ?></h6>
-                          <p><b>Price: </b> <?php echo $result3['cart_price'] ?></p>
-                        </div>
+                        <tr>
+                          <td><?php echo $result5['login_id'] ?> </td>
+                          <td><?php echo $result5['login_name'] ?> </td>
+                          <td><?php echo $result5['login_mobile'] ?> </td>
+                          <td><a href="show-orders.php?id=<?php echo $result5['login_id'] ?>" class="btn btn-info">Check Order</a> </td>
+                        </tr>
                       <?php
                       }
                       ?>
-                      <div class="p-2">
-                        <h5>Total</h5>
-                        <p><?php echo $total ?></p>
-                      </div>
-                    </div>
+                    </tbody>
+                  </table>
+                </div>
 
-
-                    <div class="customer-details">
-                      <h5 class="text-center">Customer Details</h5>
-                      <div class="row">
-                        <div class="col-auto d-flex">
-                          <h6 class="me-1">Customer name:</h6>
-                          <p><?php echo $result5['username'] ?></p>
-                        </div>
-                        <div class="col-auto d-flex">
-                          <h6 class="me-1">Customer Mobile:</h6>
-                          <p class="m-0"><?php echo $result5['mobile'] ?></p>
-                        </div>
-                      </div>
-                      <p><b>Customer Email: </b><?php echo $result5['email'] ?></p>
-                      <h5>Customer address</h5>
-                      <div><?php echo $result5['address'] ?></div>
-                    </div>
-                  </div>
-
-                <?php
-                } else {
-                  echo "No orders yet";
-                }
                 ?>
               </div>
 
@@ -278,5 +264,5 @@ if (isset($_SESSION['ADMIN_LOGON'])) {
 
 
 <script src="javascript/bootstrap.bundle.min.js"></script>
-
+<script src="javascript/javascript.js"></script>
 </html>

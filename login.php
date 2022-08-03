@@ -32,6 +32,8 @@ if (isset($_POST['submit'])) {
       $_SESSION['USER_LOGIN'] = "yes";
       $_SESSION['USER_ID'] = $row['id'];
       $_SESSION['USER_NAME'] = $row['username'];
+      $_SESSION['USER_MOBILE'] = $row['mobile'];
+      $_SESSION['USER_EMAIL'] = $row['email'];
       header('location:index.php');
 
       // header('location:main.js');

@@ -17,5 +17,7 @@ $insertquery = "INSERT INTO cart(`cart_photo`, `cart_name`, `cart_price`, `user_
 
 $query1 = mysqli_query($con, $insertquery);
 if ($query1) {
-header('location:cart.php');
+  $_SESSION['CART-MSG'] = "Added to cart";
+
+header('location:index.php');
 }

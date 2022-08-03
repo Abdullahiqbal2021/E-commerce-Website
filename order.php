@@ -65,23 +65,26 @@ while ($result1 = mysqli_fetch_assoc($query1)) {
 <?php
 
 // getting cart items
-$selectQuery1 = "SELECT * From cart";
-$query2 = mysqli_query($con, $selectQuery1);
-$result1 = mysqli_fetch_assoc($query2);
+$selectQuery2 = "SELECT * From cart";
+$query2 = mysqli_query($con, $selectQuery2);
+$result2 = mysqli_fetch_assoc($query2);
 
 if (isset($_POST['submit'])) {
   $name = $_POST['username'];
   $email = $_POST['email'];
   $address = $_POST['address'];
   $mobile = $_POST['mobile'];
-  $order_photo =  $result1['cart_photo'];
-  $order_name =  $result1['cart_name'];
-  $order_price =  $result1['cart_price'];
-
+  $order_photo =  $result2['cart_photo'];
+  $order_name =  $result2['cart_name'];
+  $order_price =  $result2['cart_price'];
+  $login_name = $_SESSION['USER_NAME'];
+  $login_id = $_SESSION['USER_ID'];
+  $login_mobile = $_SESSION['USER_MOBILE'];
+  $login_email = $_SESSION['USER_EMAIL'];
   if ($name !== "" && $email !== "" && $address !== "" && $mobile !== "" && $order_photo !== "") {
 
     // Inserting the  Customer details
-    $insertquery3 = "INSERT INTO  order_reciever(`username`, `email`, `address`, `mobile`) VALUES ('$name','$email','$address','$mobile')";
+    $insertquery3 =  "INSERT INTO order_reciever(`username`, `email`, `address`, `mobile`,`login_name`,`login_id`,`login_mobile`,`login_email`) VALUES ('$name','$email','$address','$mobile','$login_name','$login_id','$login_mobile','$login_email')";
     $query3 = mysqli_query($con, $insertquery3);
 
 
@@ -89,9 +92,9 @@ if (isset($_POST['submit'])) {
       $_SESSION['Display_order'] = "yes";
       $_SESSION['order_msg'] = "Ordered successfully";
 ?>
-      
+
     <?php
-      
+
       header('location:index.php');
     } else {
     ?>
